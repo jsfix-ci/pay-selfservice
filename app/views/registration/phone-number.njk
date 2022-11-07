@@ -5,6 +5,16 @@
   Enter your mobile phone number - GOV.UK Pay
 {% endblock %}
 
+{% block beforeContent %}
+  {{ super() }}
+  {{
+  govukBackLink({
+    text: "Back",
+    href: routes.register.securityCodes
+  })
+  }}
+{% endblock %}
+
 {% block mainContent %}
   <div class="govuk-grid-column-one-half">
 

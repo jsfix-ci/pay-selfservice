@@ -5,6 +5,16 @@
   Check your phone - GOV.UK Pay
 {% endblock %}
 
+{% block beforeContent %}
+  {{ super() }}
+  {{
+  govukBackLink({
+    text: "Back",
+    href: routes.register.phoneNumber
+  })
+  }}
+{% endblock %}
+
 {% block mainContent %}
   <div class="govuk-grid-column-one-half">
 
@@ -28,7 +38,7 @@
       }) }}
 
       {% set detailsHTML %}
-      <p class="govuk-body">Try to <a class="govuk-link govuk-link govuk-link--no-visited-state" href="/register/resend-code">send the code again</a>, or <a class="govuk-link govuk-link govuk-link--no-visited-state" href="/register/get-security-codes">get a code another way</a>.
+      <p class="govuk-body">Try to <a class="govuk-link govuk-link govuk-link--no-visited-state" href="{{ routes.register.resendCode }}">send the code again</a>, or <a class="govuk-link govuk-link govuk-link--no-visited-state" href="/register/get-security-codes">get a code another way</a>.
       {% endset %}
 
       {{ govukDetails({

@@ -5,6 +5,16 @@
   Set up an authenticator app - GOV.UK Pay
 {% endblock %}
 
+{% block beforeContent %}
+  {{ super() }}
+  {{
+  govukBackLink({
+    text: "Back",
+    href: routes.register.securityCodes
+  })
+  }}
+{% endblock %}
+
 {% block mainContent %}
   <div class="govuk-grid-column-two-thirds">
 
@@ -62,7 +72,7 @@
       {{ govukButton({ text: "Continue" }) }}
 
       <p class="govuk-body">
-        <a href="/register/get-security-codes" class="govuk-link govuk-link--no-visited-state">Get a code another way</a>
+        <a href="{{ routes.register.securityCodes }}" class="govuk-link govuk-link--no-visited-state">Get a code another way</a>
       </p>
     </form>
   </div>
