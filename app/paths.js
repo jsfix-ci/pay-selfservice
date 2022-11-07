@@ -252,6 +252,17 @@ module.exports = {
     logUserIn: '/create-service/proceed-to-login',
     serviceNaming: '/service/set-name'
   },
+  register: {
+    email: '/register/email',
+    checkEmail: '/register/check-email',
+    password: '/register/password',
+    securityCodes: '/register/get-security-codes',
+    authenticatorApp: '/register/authenticator-app',
+    phoneNumber: '/register/phone-number',
+    smsCode: '/register/sms-code',
+    resendCode: '/register/resend-code',
+    success: '/register/success'
+  },
   healthcheck: {
     path: '/healthcheck'
   },

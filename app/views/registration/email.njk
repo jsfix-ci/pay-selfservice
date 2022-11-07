@@ -1,0 +1,27 @@
+{% extends "../layout.njk" %}
+{% from "../macro/error-summary.njk" import errorSummary %}
+
+{% block pageTitle %}
+    Enter your email address - GOV.UK Pay
+{% endblock %}
+
+{% block mainContent %}
+  <div class="govuk-grid-column-one-half">
+
+    <form method="post">
+      <input id="csrf" name="csrfToken" type="hidden" value="{{ csrf }}"/>
+
+      {{ govukInput({
+        label: {
+          text: "Enter your email address",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        id: "email",
+        name: "email"
+      }) }}
+
+      {{ govukButton({ text: "Continue" }) }}
+    </form>
+  </div>
+{% endblock %}
